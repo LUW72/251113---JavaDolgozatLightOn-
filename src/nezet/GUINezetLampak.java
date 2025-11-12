@@ -29,9 +29,12 @@ public class GUINezetLampak extends javax.swing.JFrame {
     private void initComponents() {
 
         jPnlAdatok = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jlblLekapcsoltLampakSzama = new javax.swing.JLabel();
+        jlblJatekosnev = new javax.swing.JLabel();
+        jtxtFldJatekosNev = new javax.swing.JTextField();
+        jspnrLekapcsoltLampakSzama = new javax.swing.JSpinner();
+        jlblJatekAllas = new javax.swing.JLabel();
+        jPnlLampaTarolo = new javax.swing.JPanel();
         jbtnLampa0 = new javax.swing.JButton();
         jbtnLampa1 = new javax.swing.JButton();
         jbtnLampa2 = new javax.swing.JButton();
@@ -47,12 +50,19 @@ public class GUINezetLampak extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LightOn Játék");
 
         jPnlAdatok.setBorder(javax.swing.BorderFactory.createTitledBorder("Játékadatok"));
 
-        jLabel1.setText("Lekapcsolt lámpák száma:");
+        jlblLekapcsoltLampakSzama.setText("Lekapcsolt lámpák száma:");
 
-        jLabel2.setText("Lekapcsolt lámpák száma:");
+        jlblJatekosnev.setText("Játékosnév:");
+
+        jspnrLekapcsoltLampakSzama.setModel(new javax.swing.SpinnerNumberModel(0, 0, 9, 1));
+        jspnrLekapcsoltLampakSzama.setEnabled(false);
+
+        jlblJatekAllas.setForeground(new java.awt.Color(51, 51, 255));
+        jlblJatekAllas.setText("NYERTÉL, XY! Lekapcsoltad az összes lámpát!");
 
         javax.swing.GroupLayout jPnlAdatokLayout = new javax.swing.GroupLayout(jPnlAdatok);
         jPnlAdatok.setLayout(jPnlAdatokLayout);
@@ -61,49 +71,61 @@ public class GUINezetLampak extends javax.swing.JFrame {
             .addGroup(jPnlAdatokLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(213, Short.MAX_VALUE))
+                    .addComponent(jlblJatekAllas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPnlAdatokLayout.createSequentialGroup()
+                        .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jlblJatekosnev, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jlblLekapcsoltLampakSzama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtxtFldJatekosNev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jspnrLekapcsoltLampakSzama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         jPnlAdatokLayout.setVerticalGroup(
             jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPnlAdatokLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblLekapcsoltLampakSzama)
+                    .addComponent(jspnrLekapcsoltLampakSzama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblJatekosnev)
+                    .addComponent(jtxtFldJatekosNev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jlblJatekAllas)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel1.setLayout(new java.awt.GridLayout(3, 3));
+        jPnlLampaTarolo.setLayout(new java.awt.GridLayout(3, 3, 2, 2));
 
-        jbtnLampa0.setBackground(new java.awt.Color(0, 204, 0));
-        jbtnLampa0.setForeground(new java.awt.Color(0, 204, 0));
-        jPanel1.add(jbtnLampa0);
+        jbtnLampa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_sarga.png"))); // NOI18N
+        jPnlLampaTarolo.add(jbtnLampa0);
 
         jbtnLampa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_sarga.png"))); // NOI18N
-        jPanel1.add(jbtnLampa1);
+        jPnlLampaTarolo.add(jbtnLampa1);
 
         jbtnLampa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa2);
+        jPnlLampaTarolo.add(jbtnLampa2);
 
         jbtnLampa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa3);
+        jPnlLampaTarolo.add(jbtnLampa3);
 
         jbtnLampa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa4);
+        jPnlLampaTarolo.add(jbtnLampa4);
 
         jbtnLampa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa5);
+        jPnlLampaTarolo.add(jbtnLampa5);
 
         jbtnLampa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa6);
+        jPnlLampaTarolo.add(jbtnLampa6);
 
         jbtnLampa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa7);
+        jPnlLampaTarolo.add(jbtnLampa7);
 
         jbtnLampa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
-        jPanel1.add(jbtnLampa8);
+        jPnlLampaTarolo.add(jbtnLampa8);
 
         jButton1.setText("Újraindít");
 
@@ -126,12 +148,9 @@ public class GUINezetLampak extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPnlAdatok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addGap(21, 21, 21)))
+                        .addGap(65, 65, 65)
+                        .addComponent(jPnlLampaTarolo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -140,10 +159,10 @@ public class GUINezetLampak extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPnlAdatok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPnlLampaTarolo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addGap(49, 49, 49))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,13 +212,11 @@ public class GUINezetLampak extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPnlAdatok;
+    private javax.swing.JPanel jPnlLampaTarolo;
     private javax.swing.JButton jbtnLampa0;
     private javax.swing.JButton jbtnLampa1;
     private javax.swing.JButton jbtnLampa2;
@@ -209,5 +226,10 @@ public class GUINezetLampak extends javax.swing.JFrame {
     private javax.swing.JButton jbtnLampa6;
     private javax.swing.JButton jbtnLampa7;
     private javax.swing.JButton jbtnLampa8;
+    private javax.swing.JLabel jlblJatekAllas;
+    private javax.swing.JLabel jlblJatekosnev;
+    private javax.swing.JLabel jlblLekapcsoltLampakSzama;
+    private javax.swing.JSpinner jspnrLekapcsoltLampakSzama;
+    private javax.swing.JTextField jtxtFldJatekosNev;
     // End of variables declaration//GEN-END:variables
 }
