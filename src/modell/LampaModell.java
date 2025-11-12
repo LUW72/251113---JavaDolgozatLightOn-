@@ -1,10 +1,24 @@
 package modell;
 
-/**
- *
- * @author FellerDénes(Szf_N_20
- */
 public class LampaModell 
 {
-    
+    private boolean allapot; // true - felkapcsolt, false - lekapcsolt
+    private int sorszam;
+
+    public LampaModell(boolean allapot, int sorszam) 
+    {
+        this.allapot = allapot;
+        this.sorszam = sorszam;
+    }
+
+    public boolean isAllapot() 
+    {
+        return allapot;
+    }
+
+    public int getSorszam() 
+    {
+        return sorszam;
+    }
+        
 }

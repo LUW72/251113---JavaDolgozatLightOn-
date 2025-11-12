@@ -1,6 +1,5 @@
 package vezerlo;
 
-public class LampakVezerlo 
-{
+public class LampakVezerlo {
     
 }
