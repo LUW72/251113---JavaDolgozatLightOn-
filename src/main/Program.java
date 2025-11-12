@@ -1,7 +1,9 @@
 
 package main;
 
+import modell.LampakModell;
 import nezet.GUINezetLampak;
+import vezerlo.LampakVezerlo;
 
 public class Program 
 {
@@ -31,9 +33,16 @@ public class Program
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUINezetLampak().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            public void run() 
+            {
+                GUINezetLampak nezet = new GUINezetLampak();
+                nezet.setVisible(true);
+                
+                LampakVezerlo vezerlo = new LampakVezerlo(new LampakModell(), nezet);
+                vezerlo.init();
+                
                 
             }
         });
