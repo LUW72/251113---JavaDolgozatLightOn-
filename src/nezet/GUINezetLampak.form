@@ -9,7 +9,7 @@
             <Property name="text" type="java.lang.String" value="M&#x171;veletek"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jmItemKilepes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kil&#xe9;p&#xe9;s"/>
               </Properties>
@@ -53,7 +53,7 @@
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="jPnlLampaTarolo" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnUjra" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -67,7 +67,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPnlLampaTarolo" min="-2" pref="170" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="jbtnUjra" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -231,7 +231,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jbtnUjra">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xda;jraind&#xed;t"/>
       </Properties>

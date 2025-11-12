@@ -5,6 +5,9 @@
 package nezet;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JTextField;
 
 /**
  *
@@ -44,10 +47,10 @@ public class GUINezetLampak extends javax.swing.JFrame {
         jbtnLampa6 = new javax.swing.JButton();
         jbtnLampa7 = new javax.swing.JButton();
         jbtnLampa8 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jbtnUjra = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmItemKilepes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LightOn Játék");
@@ -127,12 +130,12 @@ public class GUINezetLampak extends javax.swing.JFrame {
         jbtnLampa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/lampa_zold.png"))); // NOI18N
         jPnlLampaTarolo.add(jbtnLampa8);
 
-        jButton1.setText("Újraindít");
+        jbtnUjra.setText("Újraindít");
 
         jMenu1.setText("Műveletek");
 
-        jMenuItem1.setText("Kilépés");
-        jMenu1.add(jMenuItem1);
+        jmItemKilepes.setText("Kilépés");
+        jMenu1.add(jmItemKilepes);
 
         jMenuBar1.add(jMenu1);
 
@@ -150,7 +153,7 @@ public class GUINezetLampak extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(jPnlLampaTarolo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jbtnUjra, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -161,7 +164,7 @@ public class GUINezetLampak extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPnlLampaTarolo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jbtnUjra)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -169,52 +172,67 @@ public class GUINezetLampak extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
     
     
     
     
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-        * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-        */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUINezetLampak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUINezetLampak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUINezetLampak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUINezetLampak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUINezetLampak().setVisible(true);
-                
-            }
-        });
+    public JButton getJbtnLampa0() {
+        return jbtnLampa0;
     }
 
+    public JButton getJbtnLampa1() {
+        return jbtnLampa1;
+    }
+
+    public JButton getJbtnLampa3() {
+        return jbtnLampa3;
+    }
+
+    public JButton getJbtnLampa4() {
+        return jbtnLampa4;
+    }
+
+    public JButton getJbtnLampa5() {
+        return jbtnLampa5;
+    }
+
+    public JButton getJbtnLampa6() {
+        return jbtnLampa6;
+    }
+
+    public JButton getJbtnLampa7() {
+        return jbtnLampa7;
+    }
+
+    public JButton getJbtnLampa8() {
+        return jbtnLampa8;
+    }
+    
+    public String getJtxtFldJatekosNev() {
+        return jtxtFldJatekosNev.getText();
+    }
+
+    public void setJlblJatekAllas(String text) {
+        this.jlblJatekAllas.setText(text);
+    }
+
+    public JButton getJbtnUjra() {
+        return jbtnUjra;
+    }
+
+    public JMenuItem getJmItemKilepes() {
+        return jmItemKilepes;
+    }
+    
+    
+
+    
+ 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPnlAdatok;
     private javax.swing.JPanel jPnlLampaTarolo;
     private javax.swing.JButton jbtnLampa0;
@@ -226,9 +244,11 @@ public class GUINezetLampak extends javax.swing.JFrame {
     private javax.swing.JButton jbtnLampa6;
     private javax.swing.JButton jbtnLampa7;
     private javax.swing.JButton jbtnLampa8;
+    private javax.swing.JButton jbtnUjra;
     private javax.swing.JLabel jlblJatekAllas;
     private javax.swing.JLabel jlblJatekosnev;
     private javax.swing.JLabel jlblLekapcsoltLampakSzama;
+    private javax.swing.JMenuItem jmItemKilepes;
     private javax.swing.JSpinner jspnrLekapcsoltLampakSzama;
     private javax.swing.JTextField jtxtFldJatekosNev;
     // End of variables declaration//GEN-END:variables
