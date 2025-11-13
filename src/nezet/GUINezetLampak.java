@@ -195,6 +195,10 @@ public class GUINezetLampak extends javax.swing.JFrame {
     public JButton getJbtnLampa1() {
         return jbtnLampa1;
     }
+    
+    public JButton getJbtnLampa2() {
+        return jbtnLampa2;
+    }    
 
     public JButton getJbtnLampa3() {
         return jbtnLampa3;
@@ -236,7 +240,24 @@ public class GUINezetLampak extends javax.swing.JFrame {
         return jmItemKilepes;
     }
     
+    public JMenuItem getJmItemLeiras() {
+        return jmItemLeiras;
+    }
+
+    public JMenuItem getJmItemBetoltes() {
+        return jmItemBetoltes;
+    }
+
+    public JMenuItem getJmItemMentes() {
+        return jmItemMentes;
+    }
+
     
+    
+    public void setJspnrLekapcsoltLampakSzama(int szam) 
+    {
+        this.jspnrLekapcsoltLampakSzama.setValue(szam);
+    }    
 
     
  

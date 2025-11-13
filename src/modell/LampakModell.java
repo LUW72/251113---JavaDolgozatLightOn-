@@ -20,4 +20,8 @@ public class LampakModell
         }
     }
     
+    public LampaModell[] getLampak() 
+    {
+        return lampak;
+    }    
 }
