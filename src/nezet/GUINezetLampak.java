@@ -50,6 +50,9 @@ public class GUINezetLampak extends javax.swing.JFrame {
         jbtnUjra = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jmItemLeiras = new javax.swing.JMenuItem();
+        jmItemMentes = new javax.swing.JMenuItem();
+        jmItemBetoltes = new javax.swing.JMenuItem();
         jmItemKilepes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +64,6 @@ public class GUINezetLampak extends javax.swing.JFrame {
 
         jlblJatekosnev.setText("Játékosnév:");
 
-        jspnrLekapcsoltLampakSzama.setModel(new javax.swing.SpinnerNumberModel(0, 0, 9, 1));
         jspnrLekapcsoltLampakSzama.setEnabled(false);
 
         jlblJatekAllas.setForeground(new java.awt.Color(51, 51, 255));
@@ -82,7 +84,7 @@ public class GUINezetLampak extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPnlAdatokLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtxtFldJatekosNev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jspnrLekapcsoltLampakSzama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jspnrLekapcsoltLampakSzama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPnlAdatokLayout.setVerticalGroup(
@@ -133,6 +135,15 @@ public class GUINezetLampak extends javax.swing.JFrame {
         jbtnUjra.setText("Újraindít");
 
         jMenu1.setText("Műveletek");
+
+        jmItemLeiras.setText("Leírás");
+        jMenu1.add(jmItemLeiras);
+
+        jmItemMentes.setText("Mentés");
+        jMenu1.add(jmItemMentes);
+
+        jmItemBetoltes.setText("Betöltés");
+        jMenu1.add(jmItemBetoltes);
 
         jmItemKilepes.setText("Kilépés");
         jMenu1.add(jmItemKilepes);
@@ -248,7 +259,10 @@ public class GUINezetLampak extends javax.swing.JFrame {
     private javax.swing.JLabel jlblJatekAllas;
     private javax.swing.JLabel jlblJatekosnev;
     private javax.swing.JLabel jlblLekapcsoltLampakSzama;
+    private javax.swing.JMenuItem jmItemBetoltes;
     private javax.swing.JMenuItem jmItemKilepes;
+    private javax.swing.JMenuItem jmItemLeiras;
+    private javax.swing.JMenuItem jmItemMentes;
     private javax.swing.JSpinner jspnrLekapcsoltLampakSzama;
     private javax.swing.JTextField jtxtFldJatekosNev;
     // End of variables declaration//GEN-END:variables

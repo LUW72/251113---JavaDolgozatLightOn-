@@ -9,6 +9,21 @@
             <Property name="text" type="java.lang.String" value="M&#x171;veletek"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jmItemLeiras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Le&#xed;r&#xe1;s"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmItemMentes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ment&#xe9;s"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmItemBetoltes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bet&#xf6;lt&#xe9;s"/>
+              </Properties>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmItemKilepes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kil&#xe9;p&#xe9;s"/>
@@ -98,7 +113,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jtxtFldJatekosNev" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jspnrLekapcsoltLampakSzama" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jspnrLekapcsoltLampakSzama" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -141,9 +156,6 @@
         </Component>
         <Component class="javax.swing.JSpinner" name="jspnrLekapcsoltLampakSzama">
           <Properties>
-            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0" maximum="9" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
-            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
