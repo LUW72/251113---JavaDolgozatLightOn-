@@ -17,6 +17,7 @@ public class LampakVezerlo
     private GUINezetLampak nezet;
 
     private JButton[] lampaLista = new JButton[9];
+    private int lekapcsoltLampak = 0;
     
     public LampakVezerlo(LampakModell modell, GUINezetLampak nezet) 
     {
@@ -29,11 +30,15 @@ public class LampakVezerlo
     public void init()
     {
         jatekterInit();
+        gombnyomasokListener();
+        
+        lekapcsoltSzamlal();
         
         nezet.getJbtnUjra().addActionListener((e) -> {
             nezet.setJlblJatekAllas("A játék újraindult");
             ujraindit();
-            jatekterInit();            
+            jatekterInit();
+            lekapcsoltSzamlal();
         });
         
         nezet.getJmItemKilepes().addActionListener((e)->{
@@ -70,6 +75,26 @@ public class LampakVezerlo
         this.lampaLista[8] = nezet.getJbtnLampa8();        
     }    
 
+    private void gombnyomasokListener()
+    {
+        nezet.setJlblJatekAllas("Sok sikert!");
+        for (int i = 0; i < modell.getLampak().length; i++) 
+        {
+            final int index = i;
+            lampaLista[i].addActionListener((e)->{
+                    
+                // állapotváloztatás
+                //modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
+
+                // lekapcs. száml
+                lekapcsoltSzamlal();
+
+                //jatekterInit();
+            });
+        }
+        
+    }    
+    
     private void jatekterInit() 
     {
         for (int i = 0; i < modell.getLampak().length; i++)
@@ -97,6 +122,22 @@ public class LampakVezerlo
         this.modell = new LampakModell();
     }
 
+    private void lekapcsoltSzamlal()
+    {
+        int db = 0;
+        for (int i = 0; i < modell.getLampak().length; i++) 
+        {
+            if (!modell.getLampak()[i].isAllapot()) 
+            {
+                db++;
+            }
+        }
+        lekapcsoltLampak = db;
+        
+        nezet.setJspnrLekapcsoltLampakSzama(lekapcsoltLampak);
+    }    
+    
+    
     private void mentesFajlba() 
     {
         String sorok = "";
