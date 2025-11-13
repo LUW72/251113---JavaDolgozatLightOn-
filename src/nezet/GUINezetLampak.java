@@ -64,6 +64,8 @@ public class GUINezetLampak extends javax.swing.JFrame {
 
         jlblJatekosnev.setText("Játékosnév:");
 
+        jtxtFldJatekosNev.setToolTipText("Add meg a neved (Nem kötelező)");
+
         jspnrLekapcsoltLampakSzama.setEnabled(false);
 
         jlblJatekAllas.setForeground(new java.awt.Color(51, 51, 255));
