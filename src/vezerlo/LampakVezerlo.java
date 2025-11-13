@@ -127,7 +127,7 @@ public class LampakVezerlo
         this.modell = new LampakModell();
     }
 
-    private void lekapcsoltSzamlal()
+    public void lekapcsoltSzamlal()
     {
         int db = 0;
         for (int i = 0; i < modell.getLampak().length; i++) 
@@ -248,5 +248,13 @@ public class LampakVezerlo
             nezet.setJlblJatekAllas("Hiba a betöltés közben: " + e.getMessage());
         }
     }
+    
+    // Tesztre
+
+    public int getLekapcsoltLampak() 
+    {
+        return lekapcsoltLampak;
+    }
+    
     
 }
