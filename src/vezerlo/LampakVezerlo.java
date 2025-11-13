@@ -43,9 +43,13 @@ public class LampakVezerlo
                 System.exit(0);
             }
         });
+        
+        nezet.getJmItemLeiras().addActionListener((e)->{
+            JOptionPane.showMessageDialog(null, "A játék megnyeréséhez az összes lámpát le kell kapcsolnod!\n\nLekapcsolt - zöld\nFelkapcsolt - sárga");
+        });        
 
         nezet.getJmItemBetoltes().addActionListener((e)->{
-            
+            betoltesFajlbol();
         });
         
         nezet.getJmItemMentes().addActionListener((e)->{
@@ -100,7 +104,7 @@ public class LampakVezerlo
         for (int i = 0; i < modell.getLampak().length; i++) 
             {
                 String allapot = modell.getLampak()[i].isAllapot() ? "1" : "0";
-                System.out.println(allapot);
+                //System.out.println(allapot);
                 sorok += allapot;
             }
         
@@ -118,6 +122,24 @@ public class LampakVezerlo
     private void betoltesFajlbol()
     {
         
+        try 
+        {
+            String sorok = Files.readString(Path.of("mentes.txt"), StandardCharsets.UTF_8);
+            
+            for (int i = 0; i < sorok.length(); i++) 
+            {
+                boolean allapot = sorok.charAt(i) == '1';  // Ellenőrizzük, hogy '1'-e vagy '0'
+                System.out.print(allapot + " ");
+                modell.getLampak()[i].setAllapot(allapot);
+            }
+            jatekterInit();
+            nezet.setJlblJatekAllas("Játék betöltve!");
+            
+        } 
+        catch (IOException e) 
+        {
+            nezet.setJlblJatekAllas("Hiba a betöltés közben: " + e.getMessage());
+        }
     }
     
 }

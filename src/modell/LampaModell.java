@@ -20,5 +20,10 @@ public class LampaModell
     {
         return sorszam;
     }
-        
+
+    public void setAllapot(boolean allapot) 
+    {
+        this.allapot = allapot;
+    }
+    
 }
