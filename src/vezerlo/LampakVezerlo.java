@@ -87,12 +87,13 @@ public class LampakVezerlo
                     
                 //System.out.println("nyom");
                 // állapotváloztatás
-                modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
+                //modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
+                lampakKapcsol(index);
 
                 // lekapcs. száml
                 lekapcsoltSzamlal();
 
-                jatekterInit();
+                //jatekterInit();
             });
         }
         
@@ -159,6 +160,50 @@ public class LampakVezerlo
             lampaLista[i].setEnabled(beallit);
         }
     }    
+    
+    public void lampakKapcsol(int index) 
+    {
+        lampaEllenkezoreAllit(index);
+        lampaIkonBeallit(index);
+
+        int sorSzomszed = index / 3;
+        int oszlopSzomszed = index % 3;
+
+        // bal 
+        if(oszlopSzomszed > 0) 
+        {
+            int bal = index - 1;
+            lampaEllenkezoreAllit(bal);
+            lampaIkonBeallit(bal);
+        }
+        // jobb 
+        if(oszlopSzomszed < 2) 
+        {
+            int jobb = index + 1;
+            lampaEllenkezoreAllit(jobb);
+            lampaIkonBeallit(jobb);
+        }
+        // fenti 
+        if(sorSzomszed > 0) 
+        {
+            int fel = index - 3;
+            lampaEllenkezoreAllit(fel);
+            lampaIkonBeallit(fel);
+        }
+        // lenti
+        if(sorSzomszed < 2) 
+        {
+            int le = index + 3;
+            lampaEllenkezoreAllit(le);
+            lampaIkonBeallit(le);
+        }
+    }
+
+    private void lampaEllenkezoreAllit(int index)
+    {
+        modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
+    }
+    
     
     private void mentesFajlba() 
     {
