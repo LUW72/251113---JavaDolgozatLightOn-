@@ -55,6 +55,8 @@ public class LampakVezerlo
 
         nezet.getJmItemBetoltes().addActionListener((e)->{
             betoltesFajlbol();
+            lampakEnable(true);
+            lekapcsoltSzamlal();
         });
         
         nezet.getJmItemMentes().addActionListener((e)->{
@@ -83,13 +85,14 @@ public class LampakVezerlo
             final int index = i;
             lampaLista[i].addActionListener((e)->{
                     
+                //System.out.println("nyom");
                 // állapotváloztatás
-                //modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
+                modell.getLampak()[index].setAllapot(!modell.getLampak()[index].isAllapot());
 
                 // lekapcs. száml
                 lekapcsoltSzamlal();
 
-                //jatekterInit();
+                jatekterInit();
             });
         }
         
@@ -119,6 +122,7 @@ public class LampakVezerlo
     
     private void ujraindit()
     {
+        lampakEnable(true);
         this.modell = new LampakModell();
     }
 
@@ -133,10 +137,28 @@ public class LampakVezerlo
             }
         }
         lekapcsoltLampak = db;
+        nyeresEllenor(db);
         
         nezet.setJspnrLekapcsoltLampakSzama(lekapcsoltLampak);
     }    
     
+    private void nyeresEllenor(int db) 
+    {
+        if(db == modell.getLampak().length)
+        {
+            JOptionPane.showMessageDialog(null, "GRATULÁLOK, NYERTÉL " + nezet.getJtxtFldJatekosNev() + "!");
+            nezet.setJlblJatekAllas("Szeretnél új játékot kezdeni?");
+            lampakEnable(false);            
+        }
+    }
+
+    private void lampakEnable(boolean beallit)
+    {
+        for (int i = 0; i < modell.getLampak().length; i++)
+        {
+            lampaLista[i].setEnabled(beallit);
+        }
+    }    
     
     private void mentesFajlba() 
     {
@@ -162,15 +184,14 @@ public class LampakVezerlo
     
     private void betoltesFajlbol()
     {
-        
         try 
         {
             String sorok = Files.readString(Path.of("mentes.txt"), StandardCharsets.UTF_8);
             
             for (int i = 0; i < sorok.length(); i++) 
             {
-                boolean allapot = sorok.charAt(i) == '1';  // Ellenőrizzük, hogy '1'-e vagy '0'
-                System.out.print(allapot + " ");
+                boolean allapot = sorok.charAt(i) == '1';
+                //System.out.print(allapot + " ");
                 modell.getLampak()[i].setAllapot(allapot);
             }
             jatekterInit();
